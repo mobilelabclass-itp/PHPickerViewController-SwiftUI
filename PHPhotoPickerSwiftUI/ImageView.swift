@@ -13,8 +13,8 @@ struct ImageView: View {
   var body: some View {
     Image(uiImage: uiImage)
       .resizable()
-      .frame(height: 250, alignment: .center)
       .aspectRatio(contentMode: .fit)
+      .frame(height: 250, alignment: .center)
       .cornerRadius(10)
       .padding(10)
   }
