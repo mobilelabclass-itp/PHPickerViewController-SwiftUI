@@ -16,6 +16,7 @@
 		63F42D7325AA186400EBBDA5 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F42D7225AA186400EBBDA5 /* ImageView.swift */; };
 		ABF2E72A27ED03EE005A988D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = ABF2E72927ED03EE005A988D /* README.md */; };
 		ABF2E72D27ED0845005A988D /* BlendProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF2E72C27ED0845005A988D /* BlendProcessor.swift */; };
+		ABF2E72F27ED0CEE005A988D /* BlendOutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF2E72E27ED0CEE005A988D /* BlendOutputView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		63F42D7225AA186400EBBDA5 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		ABF2E72927ED03EE005A988D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		ABF2E72C27ED0845005A988D /* BlendProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlendProcessor.swift; sourceTree = "<group>"; };
+		ABF2E72E27ED0CEE005A988D /* BlendOutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlendOutputView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				ABF2E72C27ED0845005A988D /* BlendProcessor.swift */,
+				ABF2E72E27ED0CEE005A988D /* BlendOutputView.swift */,
 			);
 			path = Blend;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 				6378B08125A0ED9B007CA36D /* ContentView.swift in Sources */,
 				ABF2E72D27ED0845005A988D /* BlendProcessor.swift in Sources */,
 				63AD927625A60A1A00991ED8 /* PhotoPickerView.swift in Sources */,
+				ABF2E72F27ED0CEE005A988D /* BlendOutputView.swift in Sources */,
 				6378B07F25A0ED9B007CA36D /* PHPhotoPickerSwiftUIApp.swift in Sources */,
 				6378B08F25A0EDAF007CA36D /* PhotoPicker.swift in Sources */,
 			);

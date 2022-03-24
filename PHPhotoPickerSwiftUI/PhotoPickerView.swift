@@ -10,6 +10,7 @@ import SwiftUI
 struct PhotoPickerView: View {
   @State private var photoPickerIsPresented = false
   @State var pickerResult: [UIImage] = []
+  @State var blendIsPresented = false
   
   var body: some View {
     NavigationView {
@@ -18,6 +19,19 @@ struct PhotoPickerView: View {
           ImageView(uiImage: uiImage)
         }
         .padding()
+        if pickerResult.count >= 2 {
+          let pair = BlendPair(backgroundImage: pickerResult[1], foregroundImage: pickerResult[0])
+          Button {
+            BlendProcessor.shared.generateBlend(pair: pair)
+            blendIsPresented.toggle()
+            print("Generate Blend");
+          } label: {
+            Text("Generate Blend")
+              .font(.headline)
+              .foregroundColor(Color.blue)
+              .padding(/*@START_MENU_TOKEN@*/.all, 10.0/*@END_MENU_TOKEN@*/)
+          }
+        }
       }
       .edgesIgnoringSafeArea(.bottom)
       .navigationBarTitle("Select Photo", displayMode: .inline)
@@ -25,6 +39,9 @@ struct PhotoPickerView: View {
       .sheet(isPresented: $photoPickerIsPresented) {
         PhotoPicker(pickerResult: $pickerResult,
                     isPresented: $photoPickerIsPresented)
+      }
+      .sheet(isPresented: $blendIsPresented) {
+        BlendOutputView()
       }
     }
   }

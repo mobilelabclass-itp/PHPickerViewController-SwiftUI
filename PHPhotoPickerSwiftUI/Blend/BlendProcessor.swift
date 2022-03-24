@@ -22,10 +22,10 @@ class BlendProcessor {
   let context = CIContext()
   let request = VNGeneratePersonSegmentationRequest()
   
-  func generatePhotoGreeting(greeting: BlendPair) {
+  func generateBlend(pair: BlendPair) {
     guard
-      let backgroundImage = greeting.backgroundImage.cgImage,
-      let foregroundImage = greeting.foregroundImage.cgImage else {
+      let backgroundImage = pair.backgroundImage.cgImage,
+      let foregroundImage = pair.foregroundImage.cgImage else {
         print("Missing required images")
         return
       }
@@ -98,28 +98,6 @@ class BlendProcessor {
       return nil
     }
     return UIImage(cgImage: cgImage)
-  }
-  
-  func processVideoFrame(
-    foreground: CVPixelBuffer,
-    background: CGImage
-  ) -> CIImage? {
-    // Create request handler
-    let ciForeground = CIImage(cvPixelBuffer: foreground)
-    let personSegmentFilter = CIFilter.personSegmentation()
-    personSegmentFilter.inputImage = ciForeground
-    if let mask = personSegmentFilter.outputImage {
-      guard let output = blendImages(
-        background: CIImage(cgImage: background),
-        foreground: ciForeground,
-        mask: mask,
-        isRedMask: true) else {
-          print("Error blending images")
-          return nil
-        }
-      return output
-    }
-    return nil
   }
 }
 
